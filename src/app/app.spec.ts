@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { Landing } from '../pages/landing/landing';
 import { App } from './app';
 
 describe('App', () => {
@@ -14,10 +15,10 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render title', async () => {
-    const fixture = TestBed.createComponent(App);
-    await fixture.whenStable();
+  it('should link to the GDP page', () => {
+    const fixture = TestBed.createComponent(Landing);
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, uct-guest-lecture-cicd');
+    expect(compiled.querySelector('a')?.getAttribute('href')).toBe('http://bsg.co.za/careers/gdp/');
   });
+
 });
