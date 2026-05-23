@@ -1,0 +1,24 @@
+# Workflow for building and deploying the Angular application to GitHub Pages on push to main branch
+name: Build And Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read # To read the repo
+  pages: write # To deploy to GitHub Pages
+  id-token: write # To authenticate with GitHub Pages
+
+jobs:
+  test:
+    name: Run Reusable Test
+    uses: ./.github/workflows/reusable-test.yml
+    secrets: inherit
+
+  deploy:
+    name: Run Reusable Deploy
+    needs: test
+    uses: ./.github/workflows/reusable-deploy-pages.yml
+    secrets: inherit
