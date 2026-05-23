@@ -1,0 +1,15 @@
+name: PR Checks
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Run Reusable Test
+    uses: ./.github/workflows/reusable-test.yml
+    secrets: inherit

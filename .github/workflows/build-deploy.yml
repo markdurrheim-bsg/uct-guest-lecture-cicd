@@ -1,0 +1,23 @@
+name: Build And Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  test:
+    name: Run Reusable Test
+    uses: ./.github/workflows/reusable-test.yml
+    secrets: inherit
+
+  deploy:
+    name: Run Reusable Deploy
+    needs: test
+    uses: ./.github/workflows/reusable-deploy-pages.yml
+    secrets: inherit
