@@ -1,3 +1,4 @@
+# Workflow for running checks on pull requests to the main branch
 name: PR Checks
 
 on:
@@ -6,7 +7,7 @@ on:
       - main
 
 permissions:
-  contents: read
+  contents: read # To read the repo
 
 jobs:
   test:
