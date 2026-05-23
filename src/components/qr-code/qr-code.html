@@ -1,0 +1,10 @@
+@if (qrCodeSrc()) {
+	<a [href]="url()" target="_blank" rel="noopener noreferrer">
+		<img
+			[src]="qrCodeSrc()"
+			[width]="size()"
+			[height]="size()"
+			[alt]="'QR code for ' + url()"
+		/>
+	</a>
+}

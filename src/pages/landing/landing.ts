@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { QrCode } from '../../components/qr-code/qr-code';
 
 @Component({
   selector: 'app-landing',
-  imports: [],
+  imports: [QrCode],
   templateUrl: './landing.html',
   styleUrl: './landing.scss',
 })
