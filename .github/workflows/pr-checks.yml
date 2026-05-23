@@ -11,6 +11,5 @@ permissions:
 
 jobs:
   test:
-    name: Run Reusable Test
     uses: ./.github/workflows/reusable-test.yml
     secrets: inherit
