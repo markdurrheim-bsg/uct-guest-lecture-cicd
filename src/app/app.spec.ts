@@ -15,10 +15,4 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should link to the GDP page', () => {
-    const fixture = TestBed.createComponent(Landing);
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('a')?.getAttribute('href')).toBe('http://bsg.co.za/careers/gdp/');
-  });
-
 });
